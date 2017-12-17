@@ -10,19 +10,21 @@ public class EvenNos implements Runnable {
 
     @Override
     public void run() {
+
+	try {
+	    for (int i = 0; i <= 10; i += 2) {
+		System.out.println(Thread.currentThread().getName() + " " + i);
+		Thread.sleep(1000);
+	    }
+	} catch (final InterruptedException e) {
+	    e.printStackTrace();
+	}
+
 	/*
-	 * try {
 	 * for (int i = 0; i <= 10; i += 2) {
-	 * System.out.println(Thread.currentThread().getName() + " " + i);
-	 * Thread.sleep(1000);
-	 * }
-	 * } catch (final InterruptedException e) {
-	 * e.printStackTrace();
+	 * print(i);
 	 * }
 	 */
-	for (int i = 0; i <= 10; i += 2) {
-	    print(i);
-	}
     }
 
     public String getThreadName() {

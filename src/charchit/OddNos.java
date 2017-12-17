@@ -8,18 +8,21 @@ public class OddNos extends Thread {
 
     @Override
     public void run() {
+
+	try {
+	    for (int i = 1; i <= 10; i += 2) {
+		System.out.println(Thread.currentThread().getName() + " " + i);
+		Thread.sleep(1000);
+	    }
+	} catch (final InterruptedException e) {
+	    e.printStackTrace();
+	}
+
 	/*
-	 * try {
 	 * for (int i = 1; i <= 10; i += 2) {
-	 * Thread.sleep(1000);
-	 * }
-	 * } catch (final InterruptedException e) {
-	 * e.printStackTrace();
+	 * print(i);
 	 * }
 	 */
-	for (int i = 1; i <= 10; i += 2) {
-	    print(i);
-	}
     }
 
     synchronized void print(int n) {
